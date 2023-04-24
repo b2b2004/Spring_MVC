@@ -11,12 +11,12 @@ class MemberRepositoryTest {
     MemberRepository memberRepository = MemberRepository.getInstance();
 
     @AfterEach
-    void afterEach(){
+    void afterEach() {
         memberRepository.clearStore();
     }
 
     @Test
-    void save(){
+    void save() {
         //given
         Member member = new Member("kwon", 27);
 
@@ -29,7 +29,7 @@ class MemberRepositoryTest {
     }
 
     @Test
-    void findAll(){
+    void findAll() {
         //given
         Member member1 = new Member("member1", 20);
         Member member2 = new Member("member2", 30);

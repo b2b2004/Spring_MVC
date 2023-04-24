@@ -29,6 +29,7 @@ class ItemRepositoryTest {
         assertThat(findItem).isEqualTo(savedItem);
 
     }
+
     @Test
     void findAll() {
         //given
@@ -44,6 +45,7 @@ class ItemRepositoryTest {
         assertThat(result.size()).isEqualTo(2);
         assertThat(result).contains(item1, item2);
     }
+
     @Test
     void updateItem() {
         //given

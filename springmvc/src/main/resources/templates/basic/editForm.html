@@ -23,7 +23,8 @@
         </div>
         <div>
             <label for="itemName">상품명</label>
-            <input type="text" id="itemName" name="itemName" class="form-control" value="상품A" th:value="${item.itemName}">
+            <input type="text" id="itemName" name="itemName" class="form-control" value="상품A"
+                   th:value="${item.itemName}">
         </div>
         <div>
             <label for="price">가격</label>
@@ -44,7 +45,8 @@
                 <button class="w-100 btn btn-secondary btn-lg"
                         onclick="location.href='item.html'"
                         th:onclick="|location.href='@{/basic/items/{itemId}(itemId=${item.id})}'|"
-                        type="button">취소</button>
+                        type="button">취소
+                </button>
             </div>
         </div>
     </form>

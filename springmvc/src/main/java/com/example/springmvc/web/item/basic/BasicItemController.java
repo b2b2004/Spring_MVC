@@ -115,7 +115,6 @@ public class BasicItemController {
 //        itemRepository.save(item);
 //        return "redirect:/basic/items/" + item.getId();
 //    }
-
     @PostMapping("/add")
     public String addItemV6(Item item, RedirectAttributes redirectAttributes) {
         Item savedItem = itemRepository.save(item);

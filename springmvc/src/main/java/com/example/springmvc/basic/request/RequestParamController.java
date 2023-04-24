@@ -61,16 +61,15 @@ public class RequestParamController {
     }
 
     /**
-     * @RequestParam.required
-     * /request-param-required -> username이 없으므로 예외
-     *
+     * @RequestParam.required /request-param-required -> username이 없으므로 예외
+     * <p>
      * 주의!
      * /request-param-required?username= -> 빈문자로 통과
-     *
+     * <p>
      * 주의!
      * /request-param-required
      * int age -> null을 int에 입력하는 것은 불가능, 따라서 Integer 변경해야 함(또는 다음에 나오는
-    defaultValue 사용)
+     * defaultValue 사용)
      */
     @ResponseBody
     @RequestMapping("/request-param-required")
@@ -80,8 +79,7 @@ public class RequestParamController {
     }
 
     /**
-     * @RequestParam
-     * - defaultValue 사용
+     * @RequestParam - defaultValue 사용
      * 참고: defaultValue는 빈 문자의 경우에도 적용
      * /request-param-default?username=
      */

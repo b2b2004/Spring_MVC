@@ -13,6 +13,7 @@ public class ResponseViewController {
         ModelAndView mav = new ModelAndView("response/hello").addObject("data", "hello!");
         return mav;
     }
+
     @RequestMapping("/response-view-v2")
     public String responseViewV2(Model model) {
         model.addAttribute("data", "hello!!");

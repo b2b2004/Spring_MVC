@@ -31,6 +31,7 @@ public class SpringMemberControllerV2 {
         mav.addObject("member", member);
         return mav;
     }
+
     @RequestMapping
     public ModelAndView members() {
         List<Member> members = memberRepository.findAll();
