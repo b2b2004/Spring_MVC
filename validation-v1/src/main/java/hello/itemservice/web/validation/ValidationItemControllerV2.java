@@ -22,7 +22,6 @@ import java.util.Map;
 @Controller
 @RequestMapping("/validation/v2/items")
 @RequiredArgsConstructor
-@Slf4j
 public class ValidationItemControllerV2 {
 
     private final ItemRepository itemRepository;
@@ -30,7 +29,6 @@ public class ValidationItemControllerV2 {
 
     @InitBinder
     public void init(WebDataBinder dataBinder) {
-        log.info("init binder {}", dataBinder);
         dataBinder.addValidators(itemValidator);
     }
 
@@ -85,7 +83,7 @@ public class ValidationItemControllerV2 {
 
 
 //    @PostMapping("/add")
-//    public String addItemV2(@ModelAttribute Item item, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+//    public String addItemv2(@ModelAttribute Item item, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 //
 //        if (!StringUtils.hasText(item.getItemName())) {
 //            bindingResult.addError(new FieldError("item", "itemName", item.getItemName(), false, null, null, "상품 이름은 필수입니다."));
@@ -119,7 +117,7 @@ public class ValidationItemControllerV2 {
 
     // 오류 코드와 메시지 처리1
 //    @PostMapping("/add")
-//    public String addItemV3(@ModelAttribute Item item, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+//    public String addItemv2(@ModelAttribute Item item, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 //
 //        log.info("objectName={}", bindingResult.getObjectName());
 //        log.info("target={}", bindingResult.getTarget());
@@ -156,7 +154,7 @@ public class ValidationItemControllerV2 {
 
     // 오류 코드와 메시지 처리2  bindingResult.rejectValue
 //    @PostMapping("/add")
-//    public String addItemV4(@ModelAttribute Item item, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+//    public String addItemv2(@ModelAttribute Item item, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 //
 //        log.info("objectName={}", bindingResult.getObjectName());
 //        log.info("target={}", bindingResult.getTarget());
@@ -215,7 +213,6 @@ public class ValidationItemControllerV2 {
     public String addItemV6(@Validated @ModelAttribute Item item, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
         if (bindingResult.hasErrors()) {
-            log.info("errors={}", bindingResult);
             return "validation/v2/addForm";
         }
         //성공 로직
@@ -239,4 +236,5 @@ public class ValidationItemControllerV2 {
     }
 
 }
+
 
